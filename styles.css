@@ -1,0 +1,21 @@
+body {
+    background-color: powderblue;
+  }
+
+
+
+  .textBase{
+    margin: auto;
+  
+    width: 60%;
+  
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+  }
+  .profileBase{
+    width: 50%;
+    margin:auto;
+    padding: 10px;
+  }
+
