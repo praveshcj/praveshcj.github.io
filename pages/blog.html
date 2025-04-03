@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Pravesh Jain</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Additional Custom CSS -->
+    <style>
+        .no-posts {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 200, 83, 0.05);
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .no-posts i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Pravesh Jain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-container">
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-12 page-header" data-aos="fade-up">
+                <h1 class="page-title">My Blog</h1>
+                <p>Thoughts, ideas, and experiences from my journey in tech and life.</p>
+            </div>
+        </div>
+
+        <!-- Blog Filter -->
+        <div class="row">
+            <div class="col-12 blog-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="technology">Technology</button>
+                <button class="filter-btn" data-category="travel">Travel</button>
+                <button class="filter-btn" data-category="entrepreneurship">Entrepreneurship</button>
+            </div>
+        </div>
+
+        <!-- Blog Posts Container -->
+        <div class="row" id="blog-posts-container">
+            <!-- Posts will be loaded dynamically here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Pravesh Jain | <a href="mailto:pravesh.iitkgp@gmail.com">Contact Me</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Blog Posts Script -->
+    <script>
+        // Blog posts data
+        const blogPosts = [
+            {
+                id: 'web-development-future',
+                title: 'The Future of Web Development',
+                date: 'May 15, 2023',
+                author: 'Pravesh Jain',
+                category: 'technology',
+                image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80',
+                excerpt: 'Exploring the latest trends and technologies that are shaping the future of web development...',
+                url: '../blogs/web-development-future.html'
+            },
+            {
+                id: 'himalayan-journey',
+                title: 'My Journey Through the Himalayas',
+                date: 'April 22, 2023',
+                author: 'Pravesh Jain',
+                category: 'travel',
+                image: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+                excerpt: 'Sharing my experiences and lessons learned during my trek through the majestic Himalayan mountains...',
+                url: '../blogs/himalayan-journey.html'
+            },
+            {
+                id: 'startup-lessons',
+                title: 'Building a Startup: Lessons Learned',
+                date: 'March 10, 2023',
+                author: 'Pravesh Jain',
+                category: 'entrepreneurship',
+                image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+                excerpt: 'The challenges, victories, and important lessons I\'ve learned on my entrepreneurial journey...',
+                url: '../blogs/startup-lessons.html'
+            }
+        ];
+
+        // Function to load blog posts
+        function loadBlogPosts(category = 'all') {
+            const container = document.getElementById('blog-posts-container');
+            container.innerHTML = ''; // Clear existing posts
+            
+            let filteredPosts = category === 'all' 
+                ? blogPosts 
+                : blogPosts.filter(post => post.category === category);
+            
+            if (filteredPosts.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="no-posts">
+                            <i class="fas fa-file-alt"></i>
+                            <h3>No Posts Found</h3>
+                            <p>There are no posts in this category yet. Please check back later!</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'col-lg-4 col-md-6 mb-4';
+                postElement.setAttribute('data-aos', 'fade-up');
+                
+                postElement.innerHTML = `
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="${post.image}" alt="${post.title}">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">${post.date}</span>
+                            <h3 class="blog-title">${post.title}</h3>
+                            <p class="blog-excerpt">${post.excerpt}</p>
+                            <a href="${post.url}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(postElement);
+            });
+        }
+
+        // Initialize blog posts
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load initial posts
+            loadBlogPosts();
+            
+            // Initialize AOS
+            AOS.init();
+            
+            // Set up category filters
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Filter posts
+                    const category = button.getAttribute('data-category');
+                    loadBlogPosts(category);
+                });
+            });
+        });
+
+        // Function to fetch blog posts from HTML files (for future implementation)
+        async function fetchBlogPost(url) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                
+                // Parse the HTML to extract metadata
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                return {
+                    title: doc.querySelector('meta[name="title"]')?.content || doc.title,
+                    date: doc.querySelector('meta[name="date"]')?.content || '',
+                    author: doc.querySelector('meta[name="author"]')?.content || '',
+                    image: doc.querySelector('meta[name="image"]')?.content || '',
+                    excerpt: doc.querySelector('meta[name="excerpt"]')?.content || '',
+                    url: url
+                };
+            } catch (error) {
+                console.error('Error fetching blog post:', error);
+                return null;
+            }
+        }
+
+        // This function could be used in the future to dynamically load blog posts from the blogs folder
+        async function loadBlogPostsFromFiles() {
+            // This would need to be implemented with server-side code or a build process
+            // For now, we're using the static array above
+        }
+    </script>
+</body>
+</html> 

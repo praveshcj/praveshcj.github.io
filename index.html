@@ -3,124 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pravesh Jain</title>
+    <title>Pravesh Jain | Fullstack Engineer</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles.css">
     <!-- Custom CSS -->
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #8360c3, #2ebf91);
-            color: #fff;
-            min-height: 100vh;
-        }
-
-        .navbar {
-            background-color: transparent;
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .profile-pic {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background: rgba(0, 0, 0, 0.2);
-            color: #fff;
-        }
-
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
+        /* Keep only styles specific to the index page, removing styles that are already in the global CSS */
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Pravesh Jain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/project.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container main-container">
         <div class="row align-items-center">
             <!-- Text Section -->
-            <div class="col-lg-6">
-                <h1>Hello, I'm Pravesh Jain</h1>
-                <p>
-                    Currently a Fullstack Engineer, I am an aspiring entrepreneur. I believe that life happens one byte at a time, hence my username. Feel free to connect with me at <a href="mailto:pravesh.iitkgp@gmail.com">pravesh.iitkgp@gmail.com</a>.
-                </p>
-                <p>
-                    Please find my resume here: <a href="https://bit.ly/3DVTN4X" target="_blank">Pravesh Jain</a>.
-                </p>
-                <p>
-                    I believe that technology is the ultimate tool for equity, providing a better quality of life for everyone. So far, I have directed my efforts towards this goal, building tech that can help save time and effort for people.
-                </p>
-                <p>
-                    I also write my random thoughts here: <a href="https://one-byteatatime.blogspot.com/" target="_blank">Pravesh's Blog</a>.
-                </p>
-                <p>
-                    I like to travel. I travel to different places, see different cultures, and try different cuisines. Let's discuss some famous treks around the country, eh?
-                </p>
+            <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-text">
+                    <h1>Hello, I'm Pravesh Jain</h1>
+                    <p>
+                        Currently a <span class="tag">Fullstack Engineer</span> <span class="tag">Entrepreneur</span>
+                    </p>
+                    <p>
+                        I believe that life happens one byte at a time, hence my username. I'm passionate about building technology that creates equity and improves quality of life for everyone.
+                    </p>
+                    <p>
+                        Feel free to <a href="mailto:pravesh.iitkgp@gmail.com" class="cta-link">reach out</a> or check out my <a href="https://bit.ly/3DVTN4X" target="_blank" class="cta-link">resume</a>.
+                    </p>
+                    
+                    <div class="bio-section">
+                        <h4 class="section-title">What I Do</h4>
+                        <p>
+                            I build tech that helps save time and effort for people. My goal is to leverage technology as a tool for equity, providing better quality of life for everyone.
+                        </p>
+                    </div>
+                    
+                    <div class="bio-section">
+                        <h4 class="section-title">Beyond Coding</h4>
+                        <p>
+                            I'm an avid traveler, exploring different places, cultures, and cuisines. I also write about my thoughts on <a href="pages/blog.html" class="cta-link">my blog</a>.
+                        </p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="mailto:pravesh.iitkgp@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://bit.ly/3DVTN4X" target="_blank"><i class="fas fa-file-alt"></i></a>
+                        <a href="pages/blog.html"><i class="fas fa-blog"></i></a>
+                    </div>
+                </div>
             </div>
+            
             <!-- Image Section -->
-            <div class="col-lg-6 text-center">
-                <img src="./images/profile_pic.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                <div class="profile-card">
+                    <div class="profile-img-container">
+                        <img src="./images/profile_pic.jpg" alt="Pravesh Jain" class="profile-pic">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Pravesh Jain | <a href="mailto:pravesh.iitkgp@gmail.com">Contact Me</a></p>
+        <div class="container">
+            <p>© 2025 Pravesh Jain | <a href="mailto:pravesh.iitkgp@gmail.com">Contact Me</a></p>
+        </div>
     </footer>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

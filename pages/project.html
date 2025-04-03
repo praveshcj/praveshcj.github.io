@@ -1,33 +1,224 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Bootstrap Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="../styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-      
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Pravesh Jain</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Project Page Specific Styles */
+        .projects-heading {
+            margin-bottom: 1.5rem;
+        }
         
-        <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
+        .projects-heading h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .projects-heading h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin-top: 8px;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .status-label {
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .coming-soon-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .coming-soon-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .icon-container {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
             <a class="navbar-brand" href="../index.html">Pravesh Jain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="project.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-            <li ><a href="../index.html">Home</a></li>
-            <li class="active"><a href="./project.html">Projects</a></li>
-            <li ><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            </ul>
         </div>
-        </nav>
-        <div class="textBase">
-            As you can see, I have no projects that can be displayed on a browser. I'll attach my work as I slowly convert them to projects.
-        </div> 
-    </body>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-container">
+        
+        <!-- Page Header -->
+        <div class="projects-heading">
+            <h1>My Projects</h1>
+            <p>Showcasing some of my work and creations.</p>
+        </div>
+        
+        <!-- Coming Soon Banner -->
+        <div class="coming-soon-card">
+            <div class="code-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3>Projects Coming Soon</h3>
+            <p>I'm currently working on some exciting projects that will be displayed here. Check back later to see my work!</p>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="row g-4">
+            <!-- Personal Portfolio Website -->
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="icon-container">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A modern portfolio website built with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+                    <div class="tech-tags mb-3">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="status-label">Status: In Progress</div>
+                </div>
+            </div>
+            
+            <!-- Mobile App -->
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="icon-container">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App</h3>
+                    <p>Upcoming mobile application project. Details will be shared once development begins.</p>
+                    <div class="tech-tags mb-3">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                    <div class="status-label">Status: Planning Phase</div>
+                </div>
+            </div>
+            
+            <!-- Web Application -->
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="icon-container">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Web Application</h3>
+                    <p>Full-stack web application with user authentication, database integration, and modern UI/UX.</p>
+                    <div class="tech-tags mb-3">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <div class="status-label">Status: Concept Stage</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Pravesh Jain | <a href="mailto:pravesh.iitkgp@gmail.com">Contact Me</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
 </html>

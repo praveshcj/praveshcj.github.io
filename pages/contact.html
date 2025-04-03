@@ -1,36 +1,281 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Bootstrap Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="../styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-      
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Pravesh Jain</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-heading {
+            margin-bottom: 1.5rem;
+        }
         
-        <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
+        .contact-heading h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-heading h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin-top: 8px;
+        }
+        
+        .contact-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 2rem;
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-email {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-email:hover {
+            color: var(--accent-color);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-color);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+            border-radius: 8px;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: none;
+            color: var(--light-color);
+        }
+        
+        textarea.form-control {
+            resize: none;
+            min-height: 150px;
+        }
+        
+        .btn-send {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-send:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+        }
+        
+        .divider {
+            margin: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
             <a class="navbar-brand" href="../index.html">Pravesh Jain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-            <li ><a href="../index.html">Home</a></li>
-            <li ><a href="./project.html">Projects</a></li>
-            <li ><a href="./about.html">About</a></li>
-            <li class="active"><a href="./contact.html">Contact</a></li>
-            </ul>
         </div>
-        </nav>
-        <div class="textBase" >
-            <span class="glyphicon glyphicon-envelope" style="padding: 5px;"></span><a href="mailto:praveshjain500@gmail.com">pravesh.iitkgp@gmail.com</a><br>
-            <span class="glyphicon glyphicon-envelope" style="padding: 5px;"></span><a href="mailto:praveshjain500@gmail.com">praveshjain500@gmail.com</a><br>
-            <i class="fa fa-whatsapp" style="padding: 5px;"></i>+917727972214<br>
-        </div> 
-    </body>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-container">
+        
+        <!-- Page Header -->
+        <div class="contact-heading">
+            <h1>Get In Touch</h1>
+            <p>Have a question or want to work together? Feel free to reach out.</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Contact Information -->
+            <div class="col-lg-6">
+                <div class="contact-section">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="mt-4">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:pravesh.iitkgp@gmail.com" class="contact-email">pravesh.iitkgp@gmail.com</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:praveshjain500@gmail.com" class="contact-email">praveshjain500@gmail.com</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <span>+917727972214</span>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <h3>Find Me On</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-6">
+                <div class="contact-section">
+                    <h3>Send Me a Message</h3>
+                    
+                    <form class="mt-4">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                        
+                        <input type="text" class="form-control" placeholder="Subject">
+                        
+                        <textarea class="form-control" rows="6" placeholder="Your Message"></textarea>
+                        
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-send">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Pravesh Jain | <a href="mailto:pravesh.iitkgp@gmail.com">Contact Me</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
 </html>
