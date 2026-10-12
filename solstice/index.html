@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Privacy and support information for Solstice, a daily sun-and-moon logic puzzle game.">
-  <title>Solstice · Privacy and support</title>
+  <meta name="description" content="Meet Solstice: daily sun-and-moon logic puzzles and unlimited levels. Learn the rules, request Android beta access, and find privacy and support information.">
+  <title>Solstice · Daily sun and moon logic puzzles</title>
+  <link rel="canonical" href="https://onebyteatatime.in/solstice/">
   <style>
     :root { color-scheme: light; --paper:#f7f7ed; --ink:#20372a; --fern:#356348; --line:#cbd3c4; }
     * { box-sizing:border-box; }
@@ -25,16 +26,46 @@
     .intro { font-size:20px; margin-bottom:30px; }
     .date { color:#4f6455; font-size:15px; }
     section { scroll-margin-top:24px; }
+    .game-intro { display:grid; grid-template-columns:minmax(0,1fr) 210px; gap:32px; align-items:start; margin-bottom:40px; }
+    .game-intro figure { margin:0; }
+    .game-intro img { display:block; width:100%; height:auto; border-radius:16px; }
+    .game-intro figcaption { font-size:14px; color:#4f6455; padding-top:10px; }
+    .beta-link { display:inline-block; padding:12px 18px; background:var(--fern); color:var(--paper); text-decoration:none; border-radius:8px; margin:8px 0 14px; font-weight:600; }
+    .beta-link:hover { text-decoration:underline; }
+    .game-status { font-size:15px; }
+    #how-to-play { margin-bottom:40px; }
+    #how-to-play li { margin-bottom:10px; }
+    @media(max-width:600px) { .game-intro { grid-template-columns:1fr; } .game-intro figure { width:180px; margin-inline:auto; } }
     footer { border-top:1px solid var(--line); padding:24px 0 36px; font-size:15px; }
     @media(max-width:420px) { .wrap { width:calc(100% - 36px); } header { padding:24px 0; } main { padding-top:28px; } nav a { padding-block:8px; } }
-    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --paper:#17271f; --ink:#f0f2e5; --fern:#afd0b2; --line:#435447; } .date { color:#bac8ba; } .draft { background:#3c3524; color:#f1dfaa; } }
+    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --paper:#17271f; --ink:#f0f2e5; --fern:#afd0b2; --line:#435447; } .date, .game-intro figcaption { color:#bac8ba; } .draft { background:#3c3524; color:#f1dfaa; } }
   </style>
 </head>
 <body>
-  <header><div class="wrap"><a class="brand" href="#">Solstice</a><nav aria-label="Page sections"><a href="#privacy">Privacy</a><a href="#support">Support</a></nav></div></header>
+  <header><div class="wrap"><a class="brand" href="#">Solstice</a><nav aria-label="Page sections"><a href="#how-to-play">Rules</a><a href="#privacy">Privacy</a><a href="#support">Support</a></nav></div></header>
   <main class="wrap">
-    <h1>Calm your mind,<br>one puzzle a day.</h1>
-    <p class="intro">A little space for suns, moons, and clear thinking.</p>
+    <div class="game-intro">
+      <div>
+        <h1>Calm your mind,<br>one puzzle a day.</h1>
+        <p class="intro">Balance suns and moons in a daily logic puzzle, or follow an endless path of levels.</p>
+        <p>Take your time with hints, undo and a timer you can pause. Your progress stays on your phone.</p>
+        <a class="beta-link" href="mailto:buildingonebyteatatime@gmail.com?subject=Solstice%20Android%20beta%20access">Ask for Android beta access</a>
+        <p class="game-status">Solstice is in closed testing on Google Play. Access requires joining the approved tester list; public release is coming after testing and review. The app contains ads when available.</p>
+        <a href="#how-to-play">Learn how to play</a>
+      </div>
+      <figure><img src="daily-puzzle.png" width="1080" height="1920" alt="Solstice’s Android daily puzzle: a six-by-six board with sun and moon clues." decoding="async"><figcaption>Actual Android gameplay</figcaption></figure>
+    </div>
+    <section id="how-to-play" aria-labelledby="rules-title">
+      <h2 id="rules-title">How to play Solstice</h2>
+      <p>Fill the empty squares with suns or moons. Every puzzle has one solution.</p>
+      <ul>
+        <li>Each row and column needs equal numbers of suns and moons.</li>
+        <li>No three matching symbols can sit next to each other in a row or column.</li>
+        <li>An equals clue means its neighboring squares match. A cross clue means they differ.</li>
+        <li>The starting clues stay locked. Tap other squares to cycle through sun, moon and empty; hold to clear.</li>
+      </ul>
+      <p>Use a hint when you get stuck. Restart clears your moves while keeping elapsed time; Pause hides the board and stops the clock. Share a spoiler-free result when you finish.</p>
+    </section>
     <section id="privacy" aria-labelledby="privacy-title">
       <h2 id="privacy-title">Privacy policy</h2>
       <p class="date">Effective October 10, 2026</p>
